@@ -1,5 +1,5 @@
 CREATE TABLE tasks (
-    id SERIAL,
+    id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT,
     status VARCHAR(20) NOT NULL,
@@ -16,10 +16,10 @@ CREATE TABLE tasks (
         'READY',
         'IN_PROGRESS',
         'IN_REVIEW',
-        'IN_TESTING'
+        'IN_TESTING',
         'COMPLETED'
     ))
+);
 
     CREATE INDEX idx_tasks_assignee_id ON tasks(assignee_id);
     CREATE INDEX idx_tasks_status ON tasks(status);
-);
